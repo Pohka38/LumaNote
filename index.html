@@ -17,8 +17,17 @@
         Это стартовая версия проекта. Постепенно здесь появятся новые возможности.
         Мы постоянно работаем над созданием чего то нового.
       </p>
-      <button>Войти</button>
+      <button id="startBtn">Войти</button>
+      <p id="message"></p>
     </div>
   </div>
+<script>
+  const startBtn = document.getElementById("startBtn");
+  const message = document.getElementById("message");
+
+  startBtn.addEventListener("click", function () {
+    message.textContent = "Добро пожаловать в LumaNote. Мы начинаем создавать что-то большое.";
+  });
+</script>
 </body>
 </html>

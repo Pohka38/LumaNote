@@ -17,6 +17,7 @@ h1 {
   font-size: 48px;
   margin-bottom: 10px;
   color: #a855f7;
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
 }
 
 .subtitle {
@@ -52,4 +53,9 @@ button {
 
 button:hover {
   background: #7dd3fc;
+}
+#message {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ddd6fe;
 }
