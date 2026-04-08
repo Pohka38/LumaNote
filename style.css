@@ -10,11 +10,13 @@ body {
   margin: 0 auto;
   padding: 60px 20px;
   text-align: center;
+  background #8A2BE2;
 }
 
 h1 {
   font-size: 48px;
   margin-bottom: 10px;
+  color: #a855f7;
 }
 
 .subtitle {
