@@ -19,6 +19,9 @@
       </p>
       <button id="startBtn">Войти</button>
       <p id="message"></p>
+      <input type="text" id="noteInput" placeholder="Напиши свою первую заметку..." />
+      <button id="saveNoteBtn">Сохранить заметку</button>
+      <p id="noteResult"></p>
     </div>
   </div>
 <script>
@@ -26,8 +29,17 @@
   const message = document.getElementById("message");
 
   startBtn.addEventListener("click", function () {
-    message.textContent = "Добро пожаловать в LumaNote. Мы начинаем создавать что-то большое.";
+    message.textContent = "Ты вошёл в проект будущего";
   });
+  const noteInput = document.getElementById("noteInput");
+const saveNoteBtn = document.getElementById("saveNoteBtn");
+const noteResult = document.getElementById("noteResult");
+
+saveNoteBtn.addEventListener("click", function () {
+  const userText = noteInput.value;
+
+  noteResult.textContent = "Твоя заметка: " + userText;
+});
 </script>
 </body>
 </html>

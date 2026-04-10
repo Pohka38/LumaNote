@@ -59,3 +59,16 @@ button:hover {
   font-size: 18px;
   color: #ddd6fe;
 }
+input {
+  margin-top: 20px;
+  padding: 12px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+#saveNoteBtn {
+  margin-top: 15px;
+}
