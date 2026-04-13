@@ -4,64 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LumaNote</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<header class="topbar">
-  <div class="logo">LumaNote</div>
-  <div class="clock" id="clock">00:00:00</div>
-</header>
-  <div class="container">
-    <h1>LumaNote</h1>
-    <p class="subtitle">Твой проект начинается с первого шага.</p>
+  <header class="topbar">
+    <div class="logo">LumaNote</div>
+    <div class="clock" id="clock">00:00:00</div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Разделы</h3>
+      <ul>
+        <li class="menu-item active" data-section="home">Главная</li>
+        <li class="menu-item" data-section="notes">Мои заметки</li>
+        <li class="menu-item" data-section="ideas">Идеи</li>
+        <li class="menu-item" data-section="tasks">Задачи</li>
+        <li class="menu-item" data-section="growth">Развитие</li>
+      </ul>
+    </aside>
+    <main class="content">
+      <div class="container">
+        <section class="page-section active-section" id="home">
+          <h1>LumaNote</h1>
+          <p class="subtitle">Твоё личное пространство для роста, идей и работы.</p>
 
-    <div class="card">
-      <h2>Первая страница</h2>
-      <p>
-        Это стартовая версия проекта. Постепенно здесь появятся новые возможности.
-        Мы постоянно работаем над созданием чего то нового.
-      </p>
-      <button id="startBtn">Войти</button>
-      <p id="message"></p>
-      <input type="text" id="noteInput" placeholder="Напиши свою первую заметку..." />
-      <button id="saveNoteBtn">Сохранить заметку</button>
-      <p id="noteResult"></p>
-    </div>
+          <div class="card">
+            <h2>Первая рабочая зона</h2>
+            <p>
+              Здесь пользователь может сохранять свои мысли, идеи и будущие задачи.
+            </p>
+            <button id="startBtn">Войти</button>
+            <p id="message"></p>
+          </div>
+        </section>
+        <section class="page-section" id="notes">
+          <h1>Мои заметки</h1>
+          <p class="subtitle">Сохраняй важные мысли и возвращайся к ним позже.</p>
+          <div class="card">
+            <h2>Новая заметка</h2>
+            <input type="text" id="noteInput" placeholder="Напиши свою первую заметку..." />
+            <button id="saveNoteBtn">Сохранить заметку</button>
+            <p id="noteResult"></p>
+          </div>
+          <div id="notesList"></div>
+        </section>
+        <section class="page-section" id="ideas">
+          <h1>Идеи</h1>
+          <p class="subtitle">Здесь будут собираться будущие идеи продукта.</p>
+          <div class="card">
+            <h2>Раздел идей</h2>
+            <p>Сюда позже добавим карточки идей, фильтрацию и категории.</p>
+          </div>
+        </section>
+        <section class="page-section" id="tasks">
+          <h1>Задачи</h1>
+          <p class="subtitle">Шаг за шагом превращаем идеи в действия.</p>
+          <div class="card">
+            <h2>Раздел задач</h2>
+            <p>Позже здесь будет список задач, статусы и прогресс.</p>
+          </div>
+        </section>
+        <section class="page-section" id="growth">
+          <h1>Развитие</h1>
+          <p class="subtitle">Этот раздел покажет путь роста проекта.</p>
+          <div class="card">
+            <h2>Раздел развития</h2>
+            <p>Здесь мы будем планировать новые функции и этапы роста.</p>
+          </div>
+        </section>
+      </div>
+    </main>
   </div>
-<script>
-  const startBtn = document.getElementById("startBtn");
-  const message = document.getElementById("message");
-
-  startBtn.addEventListener("click", function () {
-    message.textContent = "Ты вошёл в проект будущего";
-  });
-const noteInput = document.getElementById("noteInput");
-const saveNoteBtn = document.getElementById("saveNoteBtn");
-const noteResult = document.getElementById("noteResult");
-
-saveNoteBtn.addEventListener("click", function () {
-  const userText = noteInput.value;
-
-  if (userText === "") {
-    noteResult.textContent = "Сначала напиши заметку";
-  } else {
-    noteResult.textContent = "Твоя заметка: " + userText;
-  }
-});
-    const clock = document.getElementById("clock");
-
-function updateClock() {
-  const now = new Date();
-
-  const hours = String(now.getHours()).padStart(2, "0");
-  const minutes = String(now.getMinutes()).padStart(2, "0");
-  const seconds = String(now.getSeconds()).padStart(2, "0");
-
-  clock.textContent = `${hours}:${minutes}:${seconds}`;
-}
-
-updateClock();
-setInterval(updateClock, 1000);
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>

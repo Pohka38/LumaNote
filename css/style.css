@@ -124,8 +124,6 @@ input {
   color: white;
   backdrop-filter: blur(6px);
 }
-
-
 /* Сообщение после входа */
 #message {
   margin-top: 20px;
@@ -137,4 +135,89 @@ input {
   margin-top: 20px;
   font-size: 18px;
   color: #93c5fd;
+}
+.layout {
+  display: flex;
+  min-height: calc(100vh - 80px);
+}
+
+.sidebar {
+  width: 240px;
+  background: rgba(15, 23, 42, 0.9);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #c4b5fd;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar li:hover {
+  background: rgba(168, 85, 247, 0.15);
+  color: #ffffff;
+}
+
+.sidebar li.active {
+  background: rgba(168, 85, 247, 0.25);
+  color: white;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+}
+.page-section {
+  display: none;
+}
+
+.page-section.active-section {
+  display: block;
+}
+.page-section {
+  display: none;
+}
+
+.page-section.active-section {
+  display: block;
+}
+#notesList {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.note-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 4px solid #a855f7;
+  padding: 16px 18px;
+  border-radius: 14px;
+  color: white;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  word-break: break-word;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
