@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<header class="topbar">
+  <div class="logo">LumaNote</div>
+  <div class="clock" id="clock">00:00:00</div>
+</header>
   <div class="container">
     <h1>LumaNote</h1>
     <p class="subtitle">Твой проект начинается с первого шага.</p>
@@ -31,15 +35,33 @@
   startBtn.addEventListener("click", function () {
     message.textContent = "Ты вошёл в проект будущего";
   });
-  const noteInput = document.getElementById("noteInput");
+const noteInput = document.getElementById("noteInput");
 const saveNoteBtn = document.getElementById("saveNoteBtn");
 const noteResult = document.getElementById("noteResult");
 
 saveNoteBtn.addEventListener("click", function () {
   const userText = noteInput.value;
 
-  noteResult.textContent = "Твоя заметка: " + userText;
+  if (userText === "") {
+    noteResult.textContent = "Сначала напиши заметку";
+  } else {
+    noteResult.textContent = "Твоя заметка: " + userText;
+  }
 });
+    const clock = document.getElementById("clock");
+
+function updateClock() {
+  const now = new Date();
+
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+
+  clock.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
 </script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+/* Общие настройки страницы */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -5,70 +7,134 @@ body {
   color: white;
 }
 
+
+/* Верхняя панель */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+
+/* Логотип */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #a855f7;
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+  letter-spacing: 1px;
+}
+
+/* Часы */
+.clock {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.25),
+    rgba(59, 130, 246, 0.2)
+  );
+  padding: 12px 22px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+
+/* Основной контейнер */
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 60px 20px;
   text-align: center;
-  background #8A2BE2;
 }
 
+
+/* Заголовок страницы */
 h1 {
   font-size: 48px;
   margin-bottom: 10px;
   color: #a855f7;
-  text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
 }
 
+
+/* Подзаголовок */
 .subtitle {
   font-size: 20px;
   color: #cbd5e1;
   margin-bottom: 40px;
 }
 
+
+/* Карточка */
 .card {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 500px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 35px;
+  border-radius: 22px;
+  max-width: 520px;
   margin: 0 auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
 }
 
-.card h2 {
-  margin-top: 0;
-}
 
+/* Кнопки */
 button {
   margin-top: 20px;
   padding: 12px 24px;
   border: none;
-  border-radius: 12px;
-  background: #38bdf8;
-  color: #0f172a;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    #a855f7,
+    #6366f1
+  );
+  color: white;
   font-size: 16px;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+/* Эффект наведения */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-button:hover {
-  background: #7dd3fc;
+
+/* Поле ввода заметки */
+input {
+  margin-top: 25px;
+  padding: 14px;
+  width: 80%;
+  max-width: 420px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  backdrop-filter: blur(6px);
 }
+
+
+/* Сообщение после входа */
 #message {
   margin-top: 20px;
   font-size: 18px;
   color: #ddd6fe;
 }
-input {
+/* Вывод заметки */
+#noteResult {
   margin-top: 20px;
-  padding: 12px;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 10px;
-  border: none;
-  font-size: 16px;
-}
-
-#saveNoteBtn {
-  margin-top: 15px;
+  font-size: 18px;
+  color: #93c5fd;
 }
